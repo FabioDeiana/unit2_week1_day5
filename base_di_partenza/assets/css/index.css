@@ -1,317 +1,310 @@
-/* Reset base */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* ----------------------------------
+   2) VARIABLES & BASE
+---------------------------------- */
+:root {
+  --yellow: #ffc017;
+  --black: #111111;
+  --muted: #777777;
+  --light: #f6f6f6;
+  --border: #e6e6e6;
+  --container-w: 1200px;
+  --font-body: "Roboto", sans-serif;
+  --font-heading: "Spectral", serif;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background: #fff;
-  color: #000;
-  line-height: 1.4;
+  font-family: var(--font-body);
+  color: var(--black);
+  background: #ffffff;
+}
+
+/* container fisso 1200px */
+.container {
+  width: var(--container-w);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* immagini */
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* ----------------------------------
+   3) TOPBAR / HEADER
+---------------------------------- */
+.topbar {
+  background: var(--yellow);
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+  font-family: var(--font-heading);
+  font-size: 200px;
+}
+.logo-img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.menu a {
+  text-decoration: none;
+  color: var(--black);
   font-size: 14px;
 }
-
-/* Header */
-.header {
-  background: #ffc629;
-  padding: 10px 15px;
-  border-bottom: 1px solid #ccc;
-}
-
-.header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  height: 28px;
-  width: auto;
-}
-
-.nav {
-  display: flex;
-  gap: 10px;
-}
-
 .btn {
-  font-size: 13px;
-  padding: 6px 14px;
+  background: #000;
+  color: #fff;
   border-radius: 20px;
+  padding: 8px 16px;
+  border: none;
   cursor: pointer;
-  border: none;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
+  font-weight: 500;
 }
 
-.btn.signin {
-  background: transparent;
-  color: #000;
-}
-
-.btn.getstarted {
-  background: #111;
-  color: #fff;
-}
-
-/* Hero Section */
+/* ----------------------------------
+   4) HERO (fisso)
+---------------------------------- */
 .hero {
-  background: #ffc629;
-  padding: 30px 15px 40px;
+  background: var(--yellow);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.06);
+  padding: 64px 0;
 }
-
-.hero h1 {
-  font-family: "Georgia", serif;
-  font-size: 2.4rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-  line-height: 1.1;
-}
-
-.hero p {
-  font-size: 1rem;
-  margin-bottom: 18px;
-  max-width: 320px;
-}
-
-.btn.startreading {
-  background: #111;
-  color: #fff;
-  padding: 10px 24px;
-  font-weight: 600;
-  border-radius: 20px;
-  border: none;
-}
-
-/* Trending Section */
-.trending {
-  padding: 10px 15px 25px;
-}
-
-.section-title {
-  display: flex;
-  align-items: center;
-  font-weight: 600;
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.trending-icon {
-  width: 14px;
-  height: 14px;
-  margin-right: 6px;
-}
-
-.trending-list {
-  list-style: none;
-  padding-left: 0;
-  counter-reset: item-counter;
-}
-
-.trending-item {
+.hero-inner {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 22px;
+  justify-content: space-between;
 }
+.hero-left {
+  max-width: 680px;
+}
+.hero h1 {
+  font-family: var(--font-heading);
+  font-size: 88px;
+  line-height: 0.95;
+  margin-bottom: 18px;
+  color: var(--black);
+}
+.hero-sub {
+  font-size: 20px;
 
-.number {
-  counter-increment: item-counter;
-  font-weight: 600;
-  color: #d4d4d4;
+  margin-bottom: 30px;
+  max-width: 560px;
+}
+.btn.big {
+  padding: 12px 26px;
   font-size: 16px;
-  width: 26px;
-  flex-shrink: 0;
-  user-select: none;
 }
 
-.avatar {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  margin: 0 12px 0 6px;
-  flex-shrink: 0;
-  background: #ccc;
+/* placeholder pattern (vuoto deliberatamente) */
+.hero-pattern {
+  width: 360px;
+  height: 180px;
 }
 
-.trending-content {
-  flex: 1;
+/* ----------------------------------
+   5) TRENDING SECTION
+---------------------------------- */
+.trending {
+  padding: 28px 0 20px;
+  border-bottom: 1px solid var(--border);
+}
+.trending-title {
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  margin-bottom: 18px;
+  color: var(--muted);
 }
 
-.author {
-  font-size: 13px;
-  margin-bottom: 2px;
-  font-weight: 600;
+/* 3 colonne fisse dentro container */
+.trending-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 18px 40px;
 }
-
-.author em {
-  font-style: italic;
-  font-weight: normal;
+.trend {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
 }
-
-.title {
+.number {
+  font-size: 34px;
   font-weight: 700;
-  font-size: 14px;
+  color: #e6e6e6;
+  width: 48px;
+  flex: 0 0 48px;
+}
+.trend-content h4 {
+  font-size: 15px;
+  font-family: var(--font-heading);
+  margin-bottom: 6px;
+}
+.trend-meta,
+.trend-author {
+  font-size: 12px;
+  color: var(--muted);
   margin-bottom: 4px;
 }
+.author-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: 8px;
+}
 
-.meta {
-  font-size: 11px;
-  color: #666;
+/* ----------------------------------
+   6) LAYOUT 2 COLONNE
+---------------------------------- */
+.layout {
   display: flex;
-  gap: 8px;
+  gap: 60px;
+  padding: 40px 0 60px;
+  align-items: flex-start;
 }
 
-/* Discover More Section */
-.discover-more {
-  padding: 15px 15px 20px;
-  border-top: 1px solid #eee;
-  font-weight: 600;
-  font-size: 10px;
-  color: #444;
-  letter-spacing: 1.2px;
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom: 12px;
+/* left articles width ~76% */
+.articles {
+  flex: 0 0 76%;
 }
 
-.tags {
+/* sidebar width ~24% */
+.discover {
+  flex: 0 0 24%;
+}
+
+/* ----------------------------------
+   7) POSTS (layout con cover a destra)
+---------------------------------- */
+.post {
+  display: flex;
+  gap: 24px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+}
+.post-left {
+  flex: 1;
+}
+.post-right {
+  width: 240px;
+  flex: 0 0 240px;
+}
+.post-img {
+  width: 240px;
+  height: 140px;
+  object-fit: cover;
+  background: #ddd;
+}
+.post-author {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.post-title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.post-desc {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.post-meta {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ----------------------------------
+   8) SIDEBAR DISCOVER
+---------------------------------- */
+.discover h3 {
+  font-size: 13px;
+  margin-bottom: 14px;
+  font-weight: 700;
+}
+.tag-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
-  justify-content: center;
-  margin-top: 10px;
+  gap: 10px;
+  margin-bottom: 24px;
 }
-
-.tag {
-  background: transparent;
-  border: 1px solid #ccc;
-  border-radius: 15px;
-  padding: 6px 12px;
-  font-size: 11px;
-  color: #555;
+.tag-list button {
+  border: 1px solid var(--border);
+  background: #fff;
+  padding: 7px 12px;
+  border-radius: 18px;
+  font-size: 13px;
   cursor: pointer;
-  white-space: nowrap;
 }
-
-/* Footer Navigation */
-.footer-nav {
-  border-top: 1px solid #eee;
-  padding: 10px 15px 18px;
-  font-size: 10px;
-  color: #777;
-}
-
-.footer-links {
-  list-style: none;
+.sidebar-links {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  justify-content: center;
 }
-
-.footer-links li a {
-  color: #777;
+.sidebar-links a {
+  color: var(--muted);
+  font-size: 13px;
   text-decoration: none;
-  font-weight: 500;
 }
 
-/* Articles List */
-.articles-list {
-  padding: 15px 15px 30px;
+/* ----------------------------------
+   9) FOOTER
+---------------------------------- */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 0 60px;
 }
-
-.article {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 24px;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 18px;
-}
-
-.author-info {
+.footer-inner {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 12px;
-  font-weight: 700;
+  justify-content: flex-start;
+}
+.footer-links a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 13px;
 }
 
-.author-avatar {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #ccc;
-  flex-shrink: 0;
+/* ----------------------------------
+   10) small utilities (no responsive)
+---------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }
-
-.category {
-  font-weight: 500;
-  font-size: 11px;
-  color: #666;
-  margin-left: 6px;
+a {
+  color: inherit;
 }
-
-.article h4 {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.2;
-  max-width: 280px;
-}
-
-.article-desc {
-  font-size: 12px;
-  color: #444;
-  max-width: 280px;
-}
-
-.article-meta {
-  font-size: 11px;
-  color: #666;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.article-meta .icon {
-  width: 12px;
-  height: 12px;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.star {
-  color: #ffc107;
-  font-weight: 700;
-}
-
-.bookmark-btn {
-  width: 20px;
-  height: 20px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  align-self: flex-start;
-  background-image: url("");
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.article-image {
-  width: 100%;
-  max-height: 120px;
-  object-fit: cover;
-  margin-top: 6px;
-  border-radius: 4px;
-}
-
-/* Accessibility */
-button:focus {
-  outline: 2px solid #000;
-  outline-offset: 2px;
+button {
+  font-family: inherit;
 }
